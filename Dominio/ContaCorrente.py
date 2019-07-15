@@ -1,22 +1,25 @@
 from Dominio.Conta import Conta
-
+from Dominio.ExcecaoChequeEspecial import ExcecaoChequeEspecial
 class ContaCorrente(Conta):
     def __init__(self, valorInicial: float, protecao=0.0):
         super().__init__(valorInicial)
         self.__chequeEspecial = protecao
-    @property
-    def chequeEspecial(self) -> float:
+
+
+    def getChequeEspecial(self) -> float:
         return self.__chequeEspecial
-    def sacar(self, valor:float) -> bool:
-        if self._saldo >= valor:
+
+    def sacar(self, valor:float) -> None:
+        if self.__chequeEspecial == 0.0 and self._saldo < valor:
+            raise ExcecaoChequeEspecial("Não há Cheque Especial", self._saldo - valor)
+        if self.__chequeEspecial + self._saldo < valor:
+            raise ExcecaoChequeEspecial("Saldo Insuficiente no Cheque Especial",
+                                        self.__chequeEspecial + self._saldo - valor)
+        if self._saldo > valor:
             self._saldo -= valor
-        elif self._saldo + self.__chequeEspecial > valor:
-            self.__chequeEspecial -= (self._saldo - valor)
-            self._saldo = 0
         else:
-            return False
-        return True
+            self.__chequeEspecial -= valor - self._saldo
+            self._saldo -= valor
+
     def __str__(self):
         return f'Conta do Tipo Corrente:\nSaldo: {self._saldo}' + f'\nCheque Especial: {self.__chequeEspecial}'
-'''conta = ContaCorrente(25.0, 82.0)
-print(conta)'''

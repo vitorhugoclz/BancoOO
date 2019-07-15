@@ -4,6 +4,8 @@ from Dominio.Conta import Conta
 from Dominio.ContaCorrente import ContaCorrente
 from Dominio.ContaPoupanca import ContaPoupanca
 from Relatorios.RelatorioClientes import RelatorioClientes
+from Dominio.ExcecaoChequeEspecial import ExcecaoChequeEspecial
+
 
 banco = Banco.getBanco()
 relatorio = RelatorioClientes()
@@ -28,3 +30,13 @@ cliente.adicionarConta(banco.getCliente(2).getConta(1))
 cliente.adicionarConta(ContaPoupanca(150.00, 0.05))
 #gerar o relatorio
 relatorio.geraRelatorio()
+
+'''try:
+    conta = Conta(55.0)
+    conta.sacar(56.0)
+except ExcecaoChequeEspecial as exc:
+    print(exc)'''
+
+'''print('\n\n\n\n');
+print('Teste\n');
+print(banco.getClientePorNome("Jane", "Simms"))'''
