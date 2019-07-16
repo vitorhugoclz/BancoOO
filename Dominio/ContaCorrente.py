@@ -1,5 +1,8 @@
 from Dominio.Conta import Conta
 from Dominio.ExcecaoChequeEspecial import ExcecaoChequeEspecial
+'''Trabalho feito por:
+    Vitor Hugo da Costa Luz: 2018.1.08.023
+    Maria Luzia Fernandes: 2018.1.08.015'''
 class ContaCorrente(Conta):
     def __init__(self, valorInicial: float, protecao=0.0):
         super().__init__(valorInicial)

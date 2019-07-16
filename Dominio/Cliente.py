@@ -1,7 +1,9 @@
 from Dominio.Conta import Conta
 from Dominio.ContaPoupanca import ContaPoupanca
 from Dominio.ContaCorrente import ContaCorrente
-
+'''Trabalho feito por:
+    Vitor Hugo da Costa Luz: 2018.1.08.023
+    Maria Luzia Fernandes: 2018.1.08.015'''
 class Cliente:
     
     def __init__(self, nome:str, sobrenome:str):

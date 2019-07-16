@@ -1,5 +1,7 @@
 from Dominio.Cliente import Cliente
-
+'''Trabalho feito por:
+    Vitor Hugo da Costa Luz: 2018.1.08.023
+    Maria Luzia Fernandes: 2018.1.08.015'''
 class Banco():
     __banco = None
     def __init__(self):
