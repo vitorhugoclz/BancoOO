@@ -14,15 +14,14 @@ class ContaCorrente(Conta):
 
     def sacar(self, valor:float) -> None:
         if self.__chequeEspecial == 0.0 and self._saldo < valor:
-            raise ExcecaoChequeEspecial("Não há Cheque Especial", self._saldo - valor)
+            raise ExcecaoChequeEspecial("Nao há saldo suficiente e conta sem cheque especial", valor - self._saldo)
         if self.__chequeEspecial + self._saldo < valor:
-            raise ExcecaoChequeEspecial("Saldo Insuficiente no Cheque Especial",
-                                        self.__chequeEspecial + self._saldo - valor)
+            raise ExcecaoChequeEspecial("Saldo Insuficiente no Cheque Especial", valor - self._saldo)
         if self._saldo > valor:
             self._saldo -= valor
         else:
             self.__chequeEspecial -= valor - self._saldo
-            self._saldo -= valor
+            self._saldo = 0.0
 
     def __str__(self):
         return f'Conta do Tipo Corrente:\nSaldo: {self._saldo}' + f'\nCheque Especial: {self.__chequeEspecial}'

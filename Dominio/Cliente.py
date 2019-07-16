@@ -10,24 +10,20 @@ class Cliente:
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__contas = list()
-    
-    @property
-    def getNome(self) -> str:
+
+    def getPrimeiroNome(self) -> str:
         return self.__nome
 
-    @property
     def setNome(self, nome:str) -> None:
         self.__nome = nome
-    
-    @property
-    def getSobrenome(self) -> str:
+
+    def getUltimoNome(self) -> str:
         return self.__sobrenome
 
-    @property
     def setSobrenome(self, sobrenome:str) -> None:
         self.__sobrenome = sobrenome
 
-    def adicionarConta(self, conta:Conta) -> None:
+    def setConta(self, conta:Conta) -> None:
         self.__contas.append(conta)
         
     def getConta(self, indice:int)-> Conta:

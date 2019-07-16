@@ -9,12 +9,14 @@ class Conta:
 
     def getSaldo(self) -> float:
         return self._saldo
+
     def depositar(self, valorDeposito:float) -> bool:
-        self.saldo += valorDeposito
+        self._saldo += valorDeposito
         return True
+
     def sacar(self, valorSaque:float) -> None:
         if self._saldo < valorSaque:
-            raise ExcecaoChequeEspecial("Saldo Insuficiente", self._saldo - valorSaque)
+            raise ExcecaoChequeEspecial("Saldo Insuficiente", valorSaque)
         self._saldo -= valorSaque
 
     def __str__(self):

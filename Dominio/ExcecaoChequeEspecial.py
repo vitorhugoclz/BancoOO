@@ -9,7 +9,7 @@ class ExcecaoChequeEspecial(Exception):
     def getDeficit(self) -> float:
         return self.__deficit
 
-    def gerMensagem(self) -> str:
+    def getMessage(self) -> str:
         return self.__mensagem
 
     def __str__(self):

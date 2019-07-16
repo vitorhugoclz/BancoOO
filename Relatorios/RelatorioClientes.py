@@ -8,7 +8,7 @@ from Dominio.Banco import Banco
     Maria Luzia Fernandes: 2018.1.08.015'''
 class RelatorioClientes:
     def geraRelatorio(self):
-        banco = Banco.getBanco()
+        banco = Banco()
         print('\t\t\tRelatorio de Clientes:\n')
         print('\t\t\t================')
         for i in range(banco.getNumeroClientes()):
