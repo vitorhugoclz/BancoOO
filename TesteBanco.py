@@ -7,10 +7,14 @@ from Relatorios.RelatorioClientes import RelatorioClientes
 from Dominio.ExcecaoChequeEspecial import ExcecaoChequeEspecial
 '''Trabalho feito por:
     Vitor Hugo da Costa Luz: 2018.1.08.023
-    Maria Luiza Fernandes: 2018.1.08.015'''
+    Maria Luiza Fernandes: 2018.1.08.015
+'''
+
 '''Nota de Observação:
     a implementação do singleton em python não necessita da utilizacao
-    de um metodo getBanco(), entao podemos usar Banco() diretamente'''
+    de um metodo getBanco(), entao podemos usar Banco() diretamente
+'''
+
 banco = Banco()
 relatorio = RelatorioClientes()
 
